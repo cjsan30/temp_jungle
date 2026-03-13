@@ -22,6 +22,12 @@
 - arr[mid]와 target 비교하여 범위 조정
 """
 
+#                                                                                                       기본적으로 정렬 상태를 가정하고 진행하는 탐색방법 
+#                                                                                                        
+#                                                                                                       
+#                                                                                                       
+#                                                                                                       
+
 def binary_search(arr, target):
     """
     이분 탐색 구현
@@ -42,8 +48,16 @@ def binary_search(arr, target):
     ## 같으면 mid 반환
     ## target이 더 크면 left = mid + 1
     ## target이 더 작으면 right = mid - 1
-    pass
     
+    for _ in range(len(arr)):
+        mid = int(( left + right ) / 2)
+
+        if arr[mid] == target: return mid
+        elif arr[mid] > target: 
+            right = mid - 1
+        elif arr[mid] < target: 
+            left = mid + 1
+        
     return -1
 
 # 테스트 케이스
