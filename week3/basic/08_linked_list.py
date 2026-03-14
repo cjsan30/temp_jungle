@@ -32,29 +32,36 @@ class LinkedList:
     """단순 연결 리스트"""
     def __init__(self):
         self.head = None
+        self.tail = None
     
     def append(self, data):
         """리스트 끝에 노드 추가"""
         new_node = Node(data)
+        current = self.head
+        #                       current가 임시변수로써 head 대신 가리키면서 순회하는걸 몰라서
+        #                       self.head로 계속 쓰니까 else 문에서 계속해서 첫번째 값이 그 뒤 값부터 append 되었음
         
         # TODO: 리스트가 비어있으면 head를 new_node로 설정
-        pass
-        
+        if self.head is None:
+            self.head = new_node
+            
         # TODO: 마지막 노드 찾기
-        pass
-        
+        else: 
+            while current.next is not None:
+                current = current.next
         # TODO: 마지막 노드의 next를 new_node로 설정
-        pass
-    
+            current.next = new_node
+            
     def print_list(self):
         """리스트의 모든 값 출력"""
         values = []
         
         # TODO: head부터 시작
-        pass
-        
+        while self.head is not None:
+            
         # TODO: 끝까지 순회하며 값 수집
-        pass
+            values.append(self.head.data)
+            self.head = self.head.next
         
         return values
 
