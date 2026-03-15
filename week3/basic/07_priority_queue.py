@@ -40,15 +40,20 @@ def process_emergency_room(patients):
     heap = []
     
     
-    # TODO: 모든 환자를 힙에 추가
-    pass
-        
+    # TODO: 모든 환자를 힙에 추가                       컴프리헨션으로 접근했는데 결과는 Generator 로 만들게 되었고, 도움받아 아래처럼 그냥 순서 변경해서 push 할 수 있는거로 정리
+    for name, priority in patients:
+        heapq.heappush(heap, (priority, name))
+    
     processed = []
     
     # TODO: 힙이 비어있지 않은 동안 반복
     ## 힙에서 우선순위가 가장 높은 환자 꺼내기
     ## 환자 처리
-    pass
+    while heap:
+        temp = heapq.heappop(heap)
+        tpri, tnm = temp
+        print("처리: %s (우선순위: %s)" %(tnm, tpri))
+        processed.append(tnm)
         
     return processed
 
