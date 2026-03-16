@@ -11,9 +11,7 @@
 
 from collections import deque
 
-cardlength = int(input())
-
-card = [x+1 for x in range(cardlength)]
+card = [x+1 for x in range(int(input()))]
 
 dq = deque(card)
 
