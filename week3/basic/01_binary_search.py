@@ -72,7 +72,7 @@ if __name__ == "__main__":
     print()
     
     # 테스트 케이스 2
-    arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+    arr2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20] # 12
     target2 = 14
     result2 = binary_search(arr2, target2)
     print(f"배열: {arr2}")

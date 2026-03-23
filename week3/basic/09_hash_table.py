@@ -46,8 +46,9 @@ def manage_grades(students):
     
     # TODO: 최고 점수 학생 찾기
     top_student = max(students)
-    top_score = students.get(top_student)
+    # top_score = students.get(top_student)
     
+    top_score = students[top_student]
     return average, top_student, top_score
 
 def find_student_score(students, name):
