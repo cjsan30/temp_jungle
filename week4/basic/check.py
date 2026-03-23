@@ -34,7 +34,7 @@ def check_problem(problem_name):
     # 문제 실행
     try:
         result = subprocess.run(
-            ["python3", problem_file],
+            ["python", problem_file],
             capture_output=True,
             text=True,
             timeout=5
@@ -117,10 +117,9 @@ def main():
                 print(f"❌ 문제 번호 {problem_num}를 찾을 수 없습니다.")
     else:
         print("사용법:")
-        print("  python3 check.py --all           # 모든 문제 채점")
-        print("  python3 check.py 1               # 1번 문제만 채점")
-        print("  python3 check.py 01_binary_tree  # 특정 문제 채점")
+        print("  python check.py --all           # 모든 문제 채점")
+        print("  python check.py 1               # 1번 문제만 채점")
+        print("  python check.py 01_binary_tree  # 특정 문제 채점")
 
 if __name__ == "__main__":
     main()
-
