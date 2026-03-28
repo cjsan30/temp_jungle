@@ -47,7 +47,15 @@ def make_change_greedy(change, coins):
     ## 현재 동전으로 거슬러줄 수 있는 개수 계산    
     ## 개수가 0보다 크면 결과에 추가
     pass
-    
+    # change를 coins1[i]로 나누면서 몫이랑 나머지를 따로 저장해야함.
+    # 몫은 딕셔너리에 value값으로, 나머지는 다음 코인을 나누기 위해 change1 에 저장해야함    
+    for i in coins:
+        chgNum = int(change/i)
+        if chgNum:
+            result[i] = int(change/i)
+            total_coins += result[i]
+            change = change % i
+
     return total_coins, result
 
 # 테스트 케이스
